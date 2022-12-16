@@ -7,7 +7,7 @@ import Todo from './components/Todo'
 import FormTodo from './components/FormTodo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import data from './data.json'
+import data from './data'
 
 // data={data}
 
@@ -59,6 +59,11 @@ function App() {
       titleTodo: "préparer le goûter",
       description: "",
       isDone: true
+    },
+    {
+      titleTodo: "laver la voiture",
+      description: "attention aux railleures",
+      isDone: false
     }
   ]);
 
@@ -126,6 +131,21 @@ function App() {
                     </Card.Body>
                   </Card>
                 ))}
+              </div>
+              <div>
+              {data.map((data, indexdata) => (
+              <Card>
+                    <Card.Body>
+                      <Todo
+                        key={indexdata}
+                        index={indexdata}
+                        todo={data}
+                        markTodo={markTodo}
+                        removeTodo={removeTodo}
+                      />
+                    </Card.Body>
+                  </Card>
+                  ))}
               </div>
             </Accordion.Body>
           </Accordion.Item>

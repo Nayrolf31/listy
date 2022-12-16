@@ -20,7 +20,7 @@ function FormTodo({ addTodo }) {
         </Form.Group>
         <Form.Group>
           <Form.Label><b>Ajout Description</b></Form.Label>
-          <Form.Control as="textarea" rows={3} value={value} onChange={e => setValue(e.target.value)} placeholder="Ajouter une nouvelle description" />
+          <Form.Control as="textarea" rows={3} name="description" value={value} onChange={e => setValue(e.target.value)} placeholder="Ajouter une nouvelle description" />
         </Form.Group>
         <Button variant="primary mb-3" type="submit">
           Ajout

@@ -1,28 +1,12 @@
-
-    [
-        {
-            "titleList": "liste 1",
-            "Tasks": [
-                {
-                    "titleTodo": "laver la voiture",
-                    "description": "penser au savon",
-                    "isDone": false
-                }
-            ]
-        },
-        {
-            "titleList": "liste 2",
-            "Tasks": [
-                {
-                    "titleTodo": "faire les courses",
-                    "description": "aller à carrefour",
-                    "isDone": true
-                },
-                {
-                    "titleTodo": "préparer le goûter",
-                    "description": "acheter des kidibous",
-                    "isDone": true
-                }
-            ]
-        }
-    ]
+[
+    {
+        "titleTodo": "changer les draps",
+        "description": "",
+        "isDone": false
+    },
+    {
+        "titleTodo": "finalisé la todo",
+        "description": "c'est fini !",
+        "isDone": true
+    }
+]
