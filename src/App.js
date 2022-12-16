@@ -1,55 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import "./App.css";
 
 import Accordion from 'react-bootstrap/Accordion';
-import { Button, Card, Form } from 'react-bootstrap';
-import Modal from 'react-bootstrap/Modal';
+import { Card } from 'react-bootstrap';
+import Todo from './components/Todo'
+import FormTodo from './components/FormTodo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import data from './data.json'
 
-data={data}
-
-
-function Todo({ todo, index, markTodo, markDesc, removeTodo }) {
-  const [smShow, setSmShow] = useState(false);
-  return (
-    <div
-      className="todo d-flex flex-row justify-content-around"
-    >
-      <span style={{ textDecoration: todo.isDone ? "line-through" : "" }} >{todo.text}  </span>
-      {/* <span onClick={() => markDesc(index)} style={{display: "none", display: "flex"}}>|| { todo.description } </span> */}
-      <span> </span>
-      <div>
-      <>
-          <Button onClick={() => setSmShow(true)} className="me-2">
-            Description
-          </Button>
-
-          <Modal
-            size="sm"
-            show={smShow}
-            onHide={() => setSmShow(false)}
-            aria-labelledby="example-modal-sizes-title-sm"
-          >
-
-            <Modal.Header closeButton>
-              <Modal.Title id="example-modal-sizes-title-sm">
-                {todo.text}
-              </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>{todo.description}</Modal.Body>
-
-          </Modal>
-          </>
-        <Button variant="outline-success" onClick={() => markTodo(index)} style={{ backgroundColor: todo.isDone ? "#198754": "", color:  "black" }} >✓</Button>{' '}
-        <Button variant="outline-danger" onClick={() => removeTodo(index)}>✕</Button>
-        
-      </div>
-    </div>
-
-  );
-}
+// data={data}
 
 // function List({ list, index, removeList}) {
 //   return (
@@ -88,53 +48,25 @@ function Todo({ todo, index, markTodo, markDesc, removeTodo }) {
 //   );
 // }
 
-function FormTodo({ addTodo }) {
-  const [value, setValue] = React.useState("");
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    if (!value) return;
-    addTodo(value);
-    setValue("");
-  };
-  
-
-  return (
-    <Form onSubmit={handleSubmit}>
-      <Form.Group>
-        <Form.Label><b>Ajout Tâche</b></Form.Label>
-        <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Ajouter une nouvelle tâche" />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label><b>Ajout Description</b></Form.Label>
-        <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Ajouter une nouvelle description" />
-      </Form.Group>
-      <Button variant="primary mb-3" type="submit">
-        Ajout
-      </Button>
-    </Form>
-  );
-}
-
 function App() {
   const [todos, setTodos] = React.useState([
     {
-      text: "faire les courses",
+      titleTodo: "faire les courses",
       description: "à carrefour",
       isDone: false
     },
     {
-      text: "préparer le goûter",
+      titleTodo: "préparer le goûter",
       description: "",
       isDone: true
     }
   ]);
 
-  const [lists, setLists] = React.useState([
-    {
-      titre: "liste 1"
-    }
-  ]);
+  // const [lists, setLists] = React.useState([
+  //   {
+  //     titre: "liste 1"
+  //   }
+  // ]);
 
   // const addList = titre => {
   //   const newLists = [...lists, { titre }];
@@ -147,8 +79,8 @@ function App() {
   //   setLists(newLists);
   // };
 
-  const addTodo = text => {
-    const newTodos = [...todos, { text }];
+  const addTodo = titleTodo => {
+    const newTodos = [...todos, { titleTodo }];
     setTodos(newTodos);
   };
 
@@ -158,11 +90,11 @@ function App() {
     setTodos(newTodos);
   };
 
-  const markDesc = index => {
-    const newDesc = [...todos];
-    newDesc[index].isDone = true;
-    setTodos(newDesc);
-  };
+  // const markDesc = index => {
+  //   const newDesc = [...todos];
+  //   newDesc[index].isDone = true;
+  //   setTodos(newDesc);
+  // };
 
   const removeTodo = index => {
     const newTodos = [...todos];
