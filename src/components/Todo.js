@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
 
+//fonction qui permet de mettre en place les todos dans la liste
 function Todo({ todo, index, markTodo, markDesc, removeTodo }) {
     const [smShow, setSmShow] = useState(false);
     return (
@@ -9,7 +10,6 @@ function Todo({ todo, index, markTodo, markDesc, removeTodo }) {
         className="todo d-flex flex-row justify-content-around"
       >
         <span style={{ textDecoration: todo.isDone ? "line-through" : "" }} >{todo.titleTodo}  </span>
-        {/* <span onClick={() => markDesc(index)} style={{display: "none", display: "flex"}}>|| { todo.description } </span> */}
         <span> </span>
         <div>
         <>

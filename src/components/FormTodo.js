@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 
+
+//fonction qui mettre en place le formulaire d'ajout de todo
 function FormTodo({ addTodo }) {
     const [value, setValue] = React.useState("");
   

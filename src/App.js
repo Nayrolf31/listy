@@ -9,45 +9,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import data from './data'
 
-// data={data}
 
-// function List({ list, index, removeList}) {
-//   return (
-//     <div
-//       className="todo"
-//     >
-//       <span>{list.text}</span>
-//       <div>
-//         <Button variant="outline-danger" onClick={() => removeList(index)}>✕</Button>
-//       </div>
-//     </div>
-
-//   );
-// }
-
-// function FormList({ addList }) {
-//   const [value, setValue] = React.useState("");
-
-//   const handleSubmit = e => {
-//     e.preventDefault();
-//     if (!value) return;
-//     addList(value);
-//     setValue("");
-//   };
-
-//   return (
-//     <Form onSubmit={handleSubmit}>
-//       <Form.Group>
-//         <Form.Label><b>Nouvelle Liste</b></Form.Label>
-//         <Form.Control type="text" className="input" value={value} onChange={e => setValue(e.target.value)} placeholder="Ajouter une nouvelle liste !" />
-//       </Form.Group>
-//       <Button variant="primary mb-3" type="submit">
-//         Ajout
-//       </Button>
-//     </Form>
-//   );
-// }
-
+//Mise en place de la fonction app afin de récupérer les composants et la data utilise à l'affichage
 function App() {
   const [todos, setTodos] = React.useState([
     {
@@ -67,23 +30,6 @@ function App() {
     }
   ]);
 
-  // const [lists, setLists] = React.useState([
-  //   {
-  //     titre: "liste 1"
-  //   }
-  // ]);
-
-  // const addList = titre => {
-  //   const newLists = [...lists, { titre }];
-  //   setLists(newLists);
-  // };
-
-  // const removeList = index => {
-  //   const newLists = [...lists];
-  //   newLists.splice(index, 1);
-  //   setLists(newLists);
-  // };
-
   const addTodo = titleTodo => {
     const newTodos = [...todos, { titleTodo }];
     setTodos(newTodos);
@@ -95,23 +41,17 @@ function App() {
     setTodos(newTodos);
   };
 
-  // const markDesc = index => {
-  //   const newDesc = [...todos];
-  //   newDesc[index].isDone = true;
-  //   setTodos(newDesc);
-  // };
-
   const removeTodo = index => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
     setTodos(newTodos);
   };
 
+  //return afin de créer la partie visuel de l'application
   return (
     <div className="app">
       <div className="container">
         <h1 className="text-center mb-4">Todo List</h1>
-        {/* <FormList addList={addList} /> */}
         <Accordion defaultActiveKey={['0']} alwaysOpen>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Liste</Accordion.Header>
