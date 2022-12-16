@@ -1,0 +1,32 @@
+.todo {
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+  align-items: center;
+}
+
+h1 {
+  padding-top: 55px!important;
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+
+}
+
+label {
+  font-family: 'Pacifico', cursive;
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.btn{
+  margin-top: 10px;
+}
+
+.container {
+  background: url("https://cdn.pixabay.com/photo/2016/12/20/21/47/the-background-1921566_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.accordion {
+  padding-bottom: 50px;
+}
