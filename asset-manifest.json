@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/listy/static/css/main.71ec6dab.css",
+    "main.js": "/listy/static/js/main.2df950f6.js",
+    "index.html": "/listy/index.html",
+    "main.71ec6dab.css.map": "/listy/static/css/main.71ec6dab.css.map",
+    "main.2df950f6.js.map": "/listy/static/js/main.2df950f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.71ec6dab.css",
+    "static/js/main.2df950f6.js"
+  ]
+}
