@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-import data from './data.json'
+import data from '../data.json'
 
 function Description() {
   const [smShow, setSmShow] = useState(false);
-  // {
-  //   data.map(data => {
-  //   {
+  
       return (
         <>
           <Button onClick={() => setSmShow(true)} className="me-2">

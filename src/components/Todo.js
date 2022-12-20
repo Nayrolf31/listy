@@ -9,7 +9,7 @@ function Todo({ todo, index, markTodo, markDesc, removeTodo }) {
       <div
         className="todo d-flex flex-row justify-content-around"
       >
-        <span style={{ textDecoration: todo.isDone ? "line-through" : "" }} >{todo.titleTodo}  </span>
+        <span style={{ textDecoration: todo.isDone ? "line-through" : "" }} >{todo.titleTodo}   </span>
         <span> </span>
         <div>
         <>
